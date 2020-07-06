@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using FitnessClub.Models;
 
 namespace FitnessClub
 {
@@ -27,6 +29,9 @@ namespace FitnessClub
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<FitnessClubContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("FitnessClubContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
