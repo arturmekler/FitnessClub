@@ -7,7 +7,7 @@ namespace FitnessClub.Models
 {
     public class UserFitnessLesson
     {
-        public int UserID { get; set; }
-        public int ScheduleID { get; set; }
+        public ICollection<User> Users { get; set; }
+        public ICollection<Schedule> Schedules { get; set; }
     }
 }
