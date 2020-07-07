@@ -14,16 +14,6 @@ namespace FitnessClub.Models
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>().HasKey(x => x.UserId);
-            modelBuilder.Entity<Schedule>().HasKey(x => x.ScheduleId);
-            modelBuilder.Entity<Trainer>().HasKey(x => x.TrainerId);
-            modelBuilder.Entity<FitnessLesson>().HasKey(x => x.LessonId);
-            modelBuilder.Entity<UserFitnessLesson>().HasKey(x => x.UserFitnessLessonId);
-
-            base.OnModelCreating(modelBuilder);
-        }
 
         public DbSet<FitnessClub.Models.FitnessLesson> FitnessLesson { get; set; }
 
@@ -33,6 +23,33 @@ namespace FitnessClub.Models
 
         public DbSet<FitnessClub.Models.UserFitnessLesson> UserFitnessLesson { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasKey(p => p.UserId);
+
+
+            modelBuilder.Entity<Schedule>()
+                .HasKey(p => p.ScheduleId);
+
+            modelBuilder.Entity<Schedule>()
+                .HasMany(p => p.FitnessLessons);
+
+            modelBuilder.Entity<Schedule>()
+                .HasMany(p => p.Trainers);
+
+
+            modelBuilder.Entity<Trainer>().HasKey(x => x.TrainerId);
+            modelBuilder.Entity<FitnessLesson>().HasKey(x => x.LessonId);
+            modelBuilder.Entity<UserFitnessLesson>().HasKey(x => x.UserFitnessLessonId);
+            modelBuilder.Entity<UserFitnessLesson>()
+                .HasMany(x => x.Schedules);
+            modelBuilder.Entity<UserFitnessLesson>()
+                .HasMany(x => x.Users);
+
+
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<FitnessClub.Models.Trainer> Trainer { get; set; }
     }
 }

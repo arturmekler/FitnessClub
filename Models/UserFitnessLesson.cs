@@ -8,7 +8,8 @@ namespace FitnessClub.Models
     public class UserFitnessLesson
     {
         public int UserFitnessLessonId { get; set; }
-        public virtual ICollection<User> Users { get; set; }
-        public virtual ICollection<Schedule> Schedules { get; set; }
+        public ICollection<User> Users { get; set; }
+        public ICollection<Schedule> Schedules { get; set; }
+
     }
 }

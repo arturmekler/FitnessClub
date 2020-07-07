@@ -11,6 +11,6 @@ namespace FitnessClub.Models
         public string Surname { get; set; }
         public string Name { get; set; }
         public char Sex { get; set; }
-        public virtual Schedule Schedule { get; set; }
+        public Schedule Schedule { get; set; }
     }
 }

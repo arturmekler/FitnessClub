@@ -9,6 +9,6 @@ namespace FitnessClub.Models
     {
         public int LessonId { get; set; }
         public string Name { get; set; }
-        public virtual Schedule Schedule { get; set; }
+        public Schedule Schedule { get; set; }
     }
 }
