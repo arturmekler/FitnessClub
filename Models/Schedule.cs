@@ -7,9 +7,10 @@ namespace FitnessClub.Models
 {
     public class Schedule
     {
-        public int ScheduleID { get; set; }
-        public ICollection<FitnessLesson> FitnessLessons { get; set; }
-        public ICollection<Trainer> Trainers { get; set; }
+        public int ScheduleId { get; set; }
+        public virtual ICollection<FitnessLesson> FitnessLessons { get; set; }
+        public virtual ICollection<Trainer> Trainers { get; set; }
+        public virtual UserFitnessLesson UserFitnessLesson { get; set; }
         public DateTime BeginDate { get; set; }
         public DateTime EndDate { get; set; }
     }

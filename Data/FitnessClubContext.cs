@@ -13,10 +13,5 @@ namespace FitnessClub.Models
             : base(options)
         {
         }
-
-        public DbSet<FitnessClub.Models.User> User { get; set; }
-
-        public DbSet<FitnessClub.Models.Trainer> Trainer { get; set; }
-
     }
 }

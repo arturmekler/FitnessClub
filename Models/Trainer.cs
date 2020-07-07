@@ -7,9 +7,10 @@ namespace FitnessClub.Models
 {
     public class Trainer
     {
-        public int TrainerID { get; set; }
+        public int TrainerId { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public char Sex { get; set; }
+        public virtual Schedule Schedule { get; set; }
     }
 }
