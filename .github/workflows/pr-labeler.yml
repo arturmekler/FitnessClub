@@ -1,0 +1,12 @@
+name: PR Labeler
+on:
+  pull_request:
+    branches: '**'
+
+jobs:
+  pr_labeler:
+    runs-on: ubuntu-latest
+    steps:
+    - name: PR Labeler
+      uses: TimonVS/pr-labeler-action@v3.1.0
+
