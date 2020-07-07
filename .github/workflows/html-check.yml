@@ -6,7 +6,7 @@ on:
     branches: '**'
 
 jobs:
-  build:
+  html_check:
     runs-on: ubuntu-latest
 
     steps:
