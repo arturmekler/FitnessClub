@@ -1,0 +1,17 @@
+name: Pull Request Tile Check
+
+on:
+  pull_request:
+    branches: '**'
+
+jobs:
+  pr_check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: PR Tile Check
+      uses: deepakputhraya/action-pr-title@v1.0.0
+      with:
+        regex: ^(\[(FEATURE|CI|FIX|DOCUMENTATION)+\])\s.+
+
