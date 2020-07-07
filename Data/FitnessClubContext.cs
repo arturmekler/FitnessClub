@@ -18,6 +18,5 @@ namespace FitnessClub.Models
 
         public DbSet<FitnessClub.Models.Trainer> Trainer { get; set; }
 
-        public DbSet<FitnessClub.Models.Schedule> Schedule { get; set; }
     }
 }
