@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace FitnessClub.Models
 {
-    public class FitnessLesson
+    public class UserFitnessLesson
     {
-        public int LessonID { get; set; }
-        public string Name { get; set; }
+        public int UserID { get; set; }
+        public int ScheduleID { get; set; }
     }
 }
