@@ -14,12 +14,5 @@ namespace FitnessClub.Models
         public char Sex { get; set; }
         public virtual Schedule Schedule { get; set; }
         public virtual UserFitnessLesson UserFitnessLesson { get; set; }
-
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<AccountTypes>.HasKey(x => x.AccountTypeID);
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }
