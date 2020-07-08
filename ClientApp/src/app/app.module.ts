@@ -13,6 +13,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserScheduleComponent } from './user-schedule/user-schedule.component';
 import { ChatComponent } from './chat/chat.component';
 import { SignUpForClassesComponent } from './sign-up-for-classes/sign-up-for-classes.component';
+import { LessonScheduleService } from './lesson-schedule.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SignUpForClassesComponent } from './sign-up-for-classes/sign-up-for-cla
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
@@ -40,7 +42,9 @@ import { SignUpForClassesComponent } from './sign-up-for-classes/sign-up-for-cla
       { path: 'sign-up-for-classes', component: SignUpForClassesComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    LessonScheduleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
