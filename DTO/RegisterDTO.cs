@@ -10,7 +10,12 @@ namespace FitnessClub.DTO
     {
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Email must be at least 3 characters")]
-        public string FullName { get; set; }
+        public string Name { get; set; }
+        [Required]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Email must be at least 3 characters")]
+        public string Surname { get; set; }
+        [StringLength(4, MinimumLength = 1, ErrorMessage = "Email must be at least 3 characters")]
+        public string Sex { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Email must be at least 3 characters")]
         public string Email { get; set; }

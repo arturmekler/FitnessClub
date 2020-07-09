@@ -1,3 +1,4 @@
+using AutoMapper;
 using FitnessClub.Models;
 using FitnessClub.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -33,6 +34,7 @@ namespace FitnessClub
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddAutoMapper();
             services.AddDbContext<FitnessClubDataBaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
             services.AddCors();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
