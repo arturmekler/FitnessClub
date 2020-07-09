@@ -1,3 +1,4 @@
+using FitnessClub.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace FitnessClub
 {
@@ -30,15 +32,15 @@ namespace FitnessClub
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            //services.AddDbContext<FitnessClubContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
+            services.AddDbContext<FitnessClubDataBaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLConnection")));
             services.AddCors();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options => {
                       options.TokenValidationParameters = new TokenValidationParameters
                       {
                           ValidateIssuerSigningKey = true,
-                          //IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-                          //    .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                          IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
+                              .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                           ValidateIssuer = false,
                           ValidateAudience = false
                       };
