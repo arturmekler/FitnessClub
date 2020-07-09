@@ -1,6 +1,12 @@
-﻿namespace FitnessClub.Repositories
+﻿using FitnessClub.Models;
+using System.Threading.Tasks;
+
+namespace FitnessClub.Repositories
 {
     public interface IAuthRepository
     {
+        Task<User> Register(User user, string password);
+        Task<User> Login(string username, string password);
+        Task<bool> UserExists(string username);
     }
 }
