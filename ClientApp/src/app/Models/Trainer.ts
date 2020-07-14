@@ -1,11 +1,11 @@
-import { UserFitnessLesson } from "./UserFitnessLesson"
+import { Schedule } from "./Schedule"
 
-export class User{
+export class Trainer{
     public Id : Number
     public Surname : String
     public Name : String
     public Sex : String
     public Email : String
     public Password : BinaryType
-    public UserFitnessLesson : UserFitnessLesson[]
+    public Schedule : Schedule[]
 }
