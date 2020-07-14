@@ -7,13 +7,16 @@ import {
     HttpResponse,
     HttpErrorResponse
 } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
+
+  constructor(private router: Router){};
+
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -50,7 +53,8 @@ export class TokenInterceptor implements HttpInterceptor {
         if (error.status === 400) {
           alert(error.error);
         }
-        return throwError(error);
+        throw new Error("asd");
+        
       }));
 }
 
