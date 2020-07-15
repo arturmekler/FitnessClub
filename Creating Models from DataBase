@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold "Server=(localdb)\MSSQLLocalDB;Database=FitnessClubDataBase;Trusted_Connection=True;Integrated Security=false;" Microsoft.EntityFrameworkCore.SqlServer -o Models
