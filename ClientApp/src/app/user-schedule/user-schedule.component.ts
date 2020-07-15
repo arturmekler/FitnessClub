@@ -17,6 +17,7 @@ export class UserScheduleComponent implements OnInit {
   isLoadingResults = true;
   
   getSchedule(): void {
+    debugger
     this.scheduleService.getSchedule()
       .subscribe(schedule=>{
         this.data = schedule;
@@ -28,7 +29,7 @@ export class UserScheduleComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getSchedule();
+    // this.getSchedule();
   }
 
 }

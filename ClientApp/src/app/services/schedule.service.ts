@@ -5,14 +5,18 @@ import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { Schedule } from './../Models/Schedule';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
+
 export class ScheduleService {
 
-  apiUrl = 'https://localhost:44358/schedule';
+  apiUrl = 'https://localhost:44358/schedules';
 
   constructor(private http: HttpClient) { }
 
   getSchedule(): Observable<Schedule[]> {
+    debugger
     return this.http.get<Schedule[]>(this.apiUrl + 'schedule')
       .pipe(
         tap(_ => this.log('fetched schedules')),
