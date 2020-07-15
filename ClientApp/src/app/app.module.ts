@@ -17,7 +17,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { ScheduleComponent } from './schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
     ChatComponent,
     SignUpForClassesComponent,
     LoginComponent,
-    RegisterComponent,
-    ScheduleComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
