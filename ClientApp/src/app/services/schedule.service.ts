@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
-import { Schedule } from './Models/Schedule';
+import { Schedule } from './../Models/Schedule';
 
 @Injectable()
 export class ScheduleService {
 
-  apiUrl = 'http://192.168.0.5:5000/api/book';
+  apiUrl = 'https://localhost:44358/schedule';
 
   constructor(private http: HttpClient) { }
 
