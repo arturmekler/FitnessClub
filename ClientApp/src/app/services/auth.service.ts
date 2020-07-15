@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
 
   apiUrl = 'http://192.168.0.5:5000/api/auth/';

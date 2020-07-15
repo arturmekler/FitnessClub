@@ -8,7 +8,7 @@ import {
     HttpErrorResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {_throw as throwError} from 'rxjs/observable/throw'
+import { throwError} from 'rxjs'
 
 import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
